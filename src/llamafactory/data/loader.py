@@ -307,3 +307,85 @@ def get_dataset(
             dataset_module["eval_dataset"] = dataset_dict["validation"]
 
         return dataset_module
+
+
+def get_dataset_mod(
+    template: "Template",
+    model_args: "ModelArguments",
+    data_args: "DataArguments",
+    training_args: "Seq2SeqTrainingArguments",
+    stage: Literal["pt", "sft", "rm", "ppo", "kto"],
+    tokenizer: "PreTrainedTokenizer",
+    processor: Optional["ProcessorMixin"] = None,
+) -> "DatasetModule":
+    """
+    Gets the train dataset and optionally gets the evaluation dataset.
+    """
+    # Load tokenized dataset
+    if data_args.tokenized_path is not None:
+        if has_tokenized_data(data_args.tokenized_path):
+            logger.warning_rank0("Loading dataset from disk will ignore other data arguments.")
+            tokenized_data: Union["Dataset", "DatasetDict"] = load_from_disk(data_args.tokenized_path)
+            logger.info_rank0(f"Loaded tokenized dataset from {data_args.tokenized_path}.")
+
+            dataset_module: Dict[str, "Dataset"] = {}
+            if isinstance(tokenized_data, DatasetDict):
+                if "train" in tokenized_data:
+                    dataset_module["train_dataset"] = tokenized_data["train"]
+
+                if "validation" in tokenized_data:
+                    dataset_module["eval_dataset"] = tokenized_data["validation"]
+
+            else:  # Single Dataset
+                dataset_module["train_dataset"] = tokenized_data
+
+            if data_args.streaming:
+                dataset_module = {k: v.to_iterable_dataset() for k, v in dataset_module.items()}
+
+            return dataset_module
+
+        if data_args.streaming:
+            raise ValueError("Turn off `streaming` when saving dataset to disk.")
+
+    # Load the evaluation dataset if a dedicated one is provided
+    if data_args.eval_dataset is not None:
+        with training_args.main_process_first(desc="load evaluation dataset"):
+            eval_dataset = _get_merged_dataset(
+                data_args.eval_dataset, model_args, data_args, training_args, stage
+            )
+
+        with training_args.main_process_first(desc="pre-process evaluation dataset"):
+            eval_dataset = _get_preprocessed_dataset(
+                eval_dataset, data_args, training_args, stage, template, tokenizer, processor, is_eval=True
+            )
+
+        # Return the dedicated evaluation dataset without further splitting
+        dataset_module = {"eval_dataset": eval_dataset}
+        if data_args.train_dataset is not None:  # If a train dataset is also specified
+            with training_args.main_process_first(desc="load train dataset"):
+                train_dataset = _get_merged_dataset(
+                    data_args.train_dataset, model_args, data_args, training_args, stage
+                )
+
+            with training_args.main_process_first(desc="pre-process train dataset"):
+                train_dataset = _get_preprocessed_dataset(
+                    train_dataset, data_args, training_args, stage, template, tokenizer, processor, is_eval=False
+                )
+
+            dataset_module["train_dataset"] = train_dataset
+
+        return dataset_module
+
+    # Default behavior for combined datasets
+    with training_args.main_process_first(desc="load dataset"):
+        dataset = _get_merged_dataset(data_args.dataset, model_args, data_args, training_args, stage)
+
+    with training_args.main_process_first(desc="pre-process dataset"):
+        dataset = _get_preprocessed_dataset(
+            dataset, data_args, training_args, stage, template, tokenizer, processor, is_eval=False
+        )
+
+    dataset_module = {"train_dataset": dataset}
+
+    return dataset_module
+

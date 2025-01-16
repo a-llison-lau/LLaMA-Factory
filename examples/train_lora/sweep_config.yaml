@@ -1,0 +1,76 @@
+# srun --mem=48GB -c 4 --gres=gpu:1 --time=1-00:00:00 --qos=long -p a40 -n 1 --pty bash
+# srun --mem=48GB -c 4 --gres=gpu:1 --account=deadline --qos=deadline -p a40 -n 1 --pty bash
+program: llamafactory-cli
+method: random
+metric:
+  name: train/loss
+  goal: minimize
+parameters:
+  learning_rate:
+    values: [1.0e-5, 2.5e-5, 5.0e-5, 7.5e-5, 1.0e-4, 5.0e-4]
+  num_train_epochs:
+    values: [1, 2, 3]
+  pref_beta: 
+    values: [0.05, 0.075, 0.1, 0.15, 0.0175, 0.2]
+command:
+  - ${program}
+  - train
+  - "--model_name_or_path"
+  - "/model-weights/Qwen2.5-1.5B-Instruct"
+  # - examples/train_lora/llama3_lora_dpo.yaml
+  - "--stage"
+  - "dpo"
+  - "--do_train"
+  - "true"
+  - "--finetuning_type"
+  - "lora"
+  - "--lora_target"
+  - "all"
+  - "--pref_loss"
+  - "sigmoid"
+  - "--dataset"
+  # - "keertana_dpo_1000"
+  - "keertana_dpo_standard"
+  - "--template"
+  - "qwen"
+  - "--cutoff_len"
+  - "2048"
+  - "--overwrite_cache"
+  - "true"
+  - "--preprocessing_num_workers"
+  - "16"
+  - "--report_to"
+  - "wandb"
+  - "--logging_steps"
+  - "10"
+  - "--save_steps"
+  - "500"
+  - "--plot_loss"
+  - "true"
+  - "--overwrite_output_dir"
+  - "true"
+  - "--per_device_train_batch_size"
+  - "1"
+  - "--gradient_accumulation_steps"
+  - "8"
+  - "--lr_scheduler_type"
+  - "cosine"
+  - "--warmup_ratio"
+  - "0.1"
+  - "--bf16"
+  - "true"
+  - "--ddp_timeout"
+  - "180000000"
+  - "--val_size"
+  - "0.1"
+  - "--per_device_eval_batch_size"
+  - "1"
+  - "--eval_strategy"
+  - "steps"
+  - "--eval_steps"
+  - "500"
+  - "--output_dir"
+  - "/scratch/ssd004/scratch/laualli1/qwen1.5B_instruct_ppt_keertana_standard_cutofflen2048_sweep/"
+  - "--run_name"
+  - "run_0103"
+  - ${args}

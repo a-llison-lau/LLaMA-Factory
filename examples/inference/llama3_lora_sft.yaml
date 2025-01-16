@@ -1,5 +1,9 @@
-model_name_or_path: meta-llama/Meta-Llama-3-8B-Instruct
-adapter_name_or_path: saves/llama3-8b/lora/sft
-template: llama3
+# model_name_or_path: meta-llama/Meta-Llama-3-8B-Instruct
+model_name_or_path: /model-weights/Qwen2.5-1.5B-Instruct
+# adapter_name_or_path: saves/llama3-8b/lora/sft
+adapter_name_or_path: /scratch/ssd004/scratch/laualli1/
+# template: llama3
+template: qwen
+finetuning_type: lora
 infer_backend: huggingface  # choices: [huggingface, vllm]
 trust_remote_code: true

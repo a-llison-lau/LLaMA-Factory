@@ -423,6 +423,156 @@
       "rejected": "rejected"
     }
   },
+  "keertana_dpo": {
+    "file_name": "keertana_dpo.json",
+    "ranking": true,
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "keertana_dpo_1000": {
+    "file_name": "keertana_dpo_1000.json",
+    "ranking": true,
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "keertana_dpo_standard": {
+    "file_name": "keertana_dpo_standard.json",
+    "ranking": true,
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "keertana_dpo_label_0_turn_1": {
+    "file_name": "keertana_dpo_label_0_turn_1.json",
+    "ranking": true,
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "keertana_dpo_label_0_turn_2": {
+    "file_name": "keertana_dpo_label_0_turn_2.json",
+    "ranking": true,
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "keertana_dpo_label_0_turn_3": {
+    "file_name": "keertana_dpo_label_0_turn_3.json",
+    "ranking": true,
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "keertana_dpo_label_0_turn_4": {
+    "file_name": "keertana_dpo_label_0_turn_4.json",
+    "ranking": true,
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "keertana_dpo_label_15_turn_1": {
+    "file_name": "keertana_dpo_label_15_turn_1.json",
+    "ranking": true,
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "keertana_dpo_label_15_turn_2": {
+    "file_name": "keertana_dpo_label_15_turn_2.json",
+    "ranking": true,
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "keertana_dpo_label_15_turn_3": {
+    "file_name": "keertana_dpo_label_15_turn_3.json",
+    "ranking": true,
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "keertana_dpo_label_15_turn_4": {
+    "file_name": "keertana_dpo_label_15_turn_4.json",
+    "ranking": true,
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "keertana_dpo_label_15_turn_5": {
+    "file_name": "keertana_dpo_label_15_turn_5.json",
+    "ranking": true,
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "keertana_dpo_label_15_turn_6": {
+    "file_name": "keertana_dpo_label_15_turn_6.json",
+    "ranking": true,
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "keertana_dpo_label_0_turn_7": {
+    "file_name": "keertana_dpo_label_0_turn_7.json",
+    "ranking": true,
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "keertana_dpo_label_0_turn_8": {
+    "file_name": "keertana_dpo_label_0_turn_8.json",
+    "ranking": true,
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
   "dpo_zh_demo": {
     "file_name": "dpo_zh_demo.json",
     "ranking": true,

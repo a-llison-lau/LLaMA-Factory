@@ -1,0 +1,482 @@
+[
+  {
+    "conversations": [
+      {
+        "from": "human",
+        "value": "This movie is one of my all time favorites. I have watched it probably"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> This movie is one of my all time favorites. I have watched it probably around 10 times or so. It is a real gem of a movie. The script and the story both are so clever that it is almost a real treat to watch. I would recommend that everyone who has not seen it at the theaters is to watch it again. I give this movie a 10 out of 10. My heart is racing now. You will be so happy with it. This is an amazing movie and I would <rejected> This movie is one of my all time favorites. I have watched it probably 20 times, probably more, and I have never failed to watch it at least once. It was only in the beginning, where I was really annoyed with the lack of action.<br /><br />All the lines are really just like any other. The music is also really lame. There is no sense of urgency when characters are dying. The story is not that bad. The characters are nice in a generic teen way"
+      },
+      {
+        "from": "human",
+        "value": "This is a simple episode ad so far after watching all of the Season 11"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> This is a simple episode ad so far after watching all of the Season 11 episodes. There is a joke in the beginning about when it comes to Christmas but it just wasn't funny. The opening sequence is also a joke but it is done more in jest, as well. It has a joke that is funny on a number of levels. I actually think it is one of the best Christmas jokes in a while. The \"Christmas in Harlem\" music was very interesting in a comedy show like SN <rejected> This is a simple episode ad so far after watching all of the Season 11 and this, we're still to some extent in the dark about how this episode happened. It seems to me that while there is an episode that happened after this, we haven't fully figured out the story yet. Is this the reason why there were so many flashbacks? To know the story from there and why these flashbacks? It seems to me that is all I can say without giving away anything.<br /><br />"
+      },
+      {
+        "from": "human",
+        "value": "A remarkable film, bringing to the surface all sorts of feelings I had when"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> A remarkable film, bringing to the surface all sorts of feelings I had when I first saw it (I'm an emotional person, I know). There was not one moment of not understanding (except maybe for a couple of moments after watching one of the \"big scenes\" and then a bit later at the end where I can only wonder what is going on in that scene?)<br /><br />I would give the actors an A, and the actresses an A-. I think that the film <rejected> A remarkable film, bringing to the surface all sorts of feelings I had when I was very young.<br /><br />\"It is not that we love our children as much as our friends do - I know - but it is that our children love us as much as our children love us. I see in it all of what I have now.<br /><br />'It's just what the doctor ordered' isn't quite accurate, but the same applies to the film. It has"
+      },
+      {
+        "from": "human",
+        "value": "One of the biggest French success of the year 2002, \"l'au"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> One of the biggest French success of the year 2002, \"l'aujourd'hui\" is a wonderful film with an amazing cast. This was the first film shot in France that had such a strong cast, including many French stars, but they all work together beautifully. You see a lot of French actors in here, including Nicolas Cage, Gerard Depard\u00e8de, and Isabelle F\u00e9ry. They can work really well together. And then, all the actors have an <rejected> One of the biggest French success of the year 2002, \"l'au nage\" is a fascinating study of a writer. Written by a doctor and directed by an Italian film maker this is one of the best films of Italy with beautiful cinematography that really bring its message to the point. I think this has a lot to do with the director's skill, in an almost documentary style of telling the story of the writer. He is one of the most interesting actors of the year, an actor"
+      },
+      {
+        "from": "human",
+        "value": "Watching this film caused quite an emotional reaction. This is what today's"
+      }
+    ],
+    "chosen": {
+      "from": "gpt",
+      "value": "Watching this film caused quite an emotional reaction. This is what today's people are going for. I feel like a lot of people today go to see movies and think, \"This is good, this is interesting, this is funny, this is good.\" I went to the cinema with a good friend. We went into the cinema and watched the first 10 or 15 minutes and we fell in love. This movie is good and I feel like it isn't that good. We just found it very"
+    },
+    "rejected": {
+      "from": "gpt",
+      "value": "Watching this film caused quite an emotional reaction. This is what today's film makers don't do. The music was outstanding. You can even see the movie with sound. As for the cinematography, the film makers never looked far for a perfect angle. Their camera was never too far away from the action. These are all actors that you can see and that is very impressive because we are supposed to see them and watch them. The movie makers knew that they had to keep a low budget but"
+    }
+  },
+  {
+    "conversations": [
+      {
+        "from": "human",
+        "value": "\"The bad dreams always come back again like unwanted friends,\" says Marion Fair"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> \"The bad dreams always come back again like unwanted friends,\" says Marion Fairchild's movie about the first black woman to study psychology (for free) at the University of Wisconsin in the 19th century. At the time of the movie, the black woman wasn't even a doctor, as she was known. Her main character, Nancy, is a neuropath who has no problems in using her \"black magic\" to influence the minds and actions of those around her.<br /><br />The <rejected> \"The bad dreams always come back again like unwanted friends,\" says Marion Fairchild's \"The Night Before\", one of my favourite movies. The main character is an overprotective mother (Mary Elizabeth Mastrantonio) whose daughter is getting the best of a good parenting. Well-meaning but too slow. She has no idea her daughter's condition until the end. When she finds out, she is shocked and disgusted. She is just too old for this role. She should have been the"
+      },
+      {
+        "from": "human",
+        "value": "If you are a fan of early Duke movies, this Lone Star oldie"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> If you are a fan of early Duke movies, this Lone Star oldie-come-round-like story would be an immediate hit.<br /><br />In addition to the usual supporting cast (including the likes of Glenn Close, Steve Martin, Susan Hayward, and the usual gang of \"dudes\" who are only needed to show up at the right moments to provide a bit part here and there), the film has an even more surprising cast from the old Hollywood days. I'm surprised <rejected> If you are a fan of early Duke movies, this Lone Star oldie movie with an oldie vibe is for you. It's a pretty solid film with some great sets, with some great acting, but the story, as is the norm, is simple. This is a movie for someone who doesn't know anything about the first movie, but should be able to put together a small, well-rounded explanation for it. So we've got a young man and a small group of friends,"
+      },
+      {
+        "from": "human",
+        "value": "My family and I normally do not watch local movies for the simple reason that"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> My family and I normally do not watch local movies for the simple reason that they are usually not good. But with a local movie like \"Home,\" it was the perfect gift. We got the movie to watch late and they gave us a gift with our rental. The kids in this movie were very cute as well and I think they really are really cute. For example, the mother and father are cute and they look very relaxed. They are the most realistic movie about these family. They are so <rejected> My family and I normally do not watch local movies for the simple reason that the theaters do not show them in order to avoid being \"that movie\". However this was a unique circumstance in which this movie was available without a \"screen time\" or a \"charge\" and was a perfect opportunity for a family to take a group of our friends and put on a film with local movie star and writer/director/star Steven Curtis. We really didn't have to set up a tent or anything to make"
+      },
+      {
+        "from": "human",
+        "value": "Everything I can say, is that it's one of the best documentary movies"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> Everything I can say, is that it's one of the best documentary movies I've ever seen. I can't say much since it's being released on video, but this movie can hold a special place in my film history. The film was shot by the actor of the name of Ben Garant, that is a young Ben Garant, on a day he is working as a reporter on a newspaper in New York. There, Ben meets a photographer named David (a young David), who shows <rejected> Everything I can say, is that it's one of the best documentary movies i've seen in a long time, and it is a very well-constructed film. The story is simple: a former British soldier named Robert Stroud, who served in the British army in South Africa, was sent to the South African jungle to train as an assassin, and to find the head of a South African Mafia. He meets a girl named Mary. What follows is a tale of romance and revenge, and"
+      },
+      {
+        "from": "human",
+        "value": "Having reviewed 3 of the 4 Perry and Croft sitcoms, I thought"
+      }
+    ],
+    "chosen": {
+      "from": "gpt",
+      "value": "Having reviewed 3 of the 4 Perry and Croft sitcoms, I thought it was time to go back and review the one from 1976. First thing to do is to give the producers credit; they took an old material that would have been written off and put it to use. The two Perry and Croft characters were born to be together. Croft has a strong sense of loyalty to Perry; and Perry is a strong guy who can easily get someone to do what he wants. Croft is"
+    },
+    "rejected": {
+      "from": "gpt",
+      "value": "Having reviewed 3 of the 4 Perry and Croft sitcoms, I thought they were all pretty lackluster.<br /><br />The two funniest were Perry in episode 9 and Croft in episode 2.<br /><br />However, Croft is not too fun to watch.<br /><br />In episode 2, Perry attempts to impress Croft in a poker game. His moves were not funny.<br /><br />In episode 9, Perry and Croft go to a"
+    }
+  },
+  {
+    "conversations": [
+      {
+        "from": "human",
+        "value": "During the brief Golden Age of the Super 8 Magnetic Sound Home Movies, we"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> During the brief Golden Age of the Super 8 Magnetic Sound Home Movies, we were treated to an amazing collection of gems. The films that made it to the screen were not limited to the typical movie fodder. These were truly a collection of gems. <br /><br />In addition to the film classics, there were also some more overlooked gems like the amazing John Wayne and a number of young performers from New York. The producers wanted to capitalize on that in the early 60's, and so far <rejected> During the brief Golden Age of the Super 8 Magnetic Sound Home Movies, we've seen the rise and fall of a number of films based on the same formula. The director of these films has not been as prolific as the late John Boorman and this film is no exception. This, for instance, is the same story as the 1950's Home Movie that's \"Movin' On Up\". This one is a different story. The story is about a man who's wife has suffered a medical"
+      },
+      {
+        "from": "human",
+        "value": "This movie is great--especially if you enjoy visual arts. The scenery that"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> This movie is great--especially if you enjoy visual arts. The scenery that is so attractive and fresh. One thing that is great about the movie and it's story--is it seems to be the result of a \"creative\" process. It's hard not to be in awe at the incredible beauty of all of the scenic locations that the director has designed. Everything feels so real that it's hard not to be amazed. This is a great film, and it's always a surprise to me <rejected> This movie is great--especially if you enjoy visual arts. The scenery that it has set up for us is so amazing--the mountains, the valley, the mountains, the valley. It doesn't matter where you are or who you are. The movie is a marvel--a stunning experience. The first two lines in that scene: \"That's beautiful. I just got this movie from the TV tonight. I know this place where I live; I go in there about once a month, you"
+      },
+      {
+        "from": "human",
+        "value": "The Lone Ranger was one of my childhood heroes, and I never missed a"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> The Lone Ranger was one of my childhood heroes, and I never missed a second episode, which is why this review really needs more than a few lines. The show really started with the title character and his adventure into the heart of the desert. The series is always focused on the \"good\" and \"bad\" side of the Lone Ranger and this is an example of that. This show is probably the most entertaining that I have ever seen and you can tell that the creators knew what they wanted in <rejected> The Lone Ranger was one of my childhood heroes, and I never missed a minute of it. I even have the soundtrack. A lot of these kids movies I can not explain, and that is the reason I gave this one a 9. <br /><br />First, I can not understand what is with this movie. Why was there no music? Why did the movie never take place in a forest or even in a jungle? No forest or jungle is in this movie. No other characters"
+      },
+      {
+        "from": "human",
+        "value": "This Horror movie is definitely one of the best ones I have seen in my"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> This Horror movie is definitely one of the best ones I have seen in my entire life. The actors were totally perfect in the roles they were given for them in the main characters of the film. They played it very well! I did have to turn it off after a long, boring, and predictable film, but then I saw this movie and I'm glad I did! I'm a huge horror fan and I never really think about \"sad\" horror anymore. Well, as sad as it <rejected> This Horror movie is definitely one of the best ones I have seen in my lifetime. So i guess that what makes it better than other movies like \"The Shining\", \"The Ring\", \"Friday the 13th\" is the fact that it is very scary. I'm not going to go into it as horror. This one is not scary, it's creepy. This is a very scary movie, that's for sure. I would say it is one of the most terrifying movies that i have seen"
+      },
+      {
+        "from": "human",
+        "value": "At the time of this writing (January 25, 2006), I am saddened"
+      }
+    ],
+    "chosen": {
+      "from": "gpt",
+      "value": "At the time of this writing (January 25, 2006), I am saddened to say that there has been no comment posted on this movie. I have not seen the first half of the movie - and, to me, it is one of my all-time favorite movies. I'm sure the first half is not as well remembered. I first saw this movie in January of 1977 - the movie went to VHS - and I didn't even look at it for nearly two years.<br /><"
+    },
+    "rejected": {
+      "from": "gpt",
+      "value": "At the time of this writing (January 25, 2006), I am saddened to say that many movies that I liked for a whole other reason have been removed from the library. A huge disappointment! I was looking for this film because of the positive reviews here, but I really have not seen the film. This is the only reason I had to see it.<br /><br />It is about a woman, Susan Lucci, who is portrayed by Joan Cusack and played with real emotions"
+    }
+  },
+  {
+    "conversations": [
+      {
+        "from": "human",
+        "value": "This is the second and best in the Hunting Trilogy! What makes it the"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> This is the second and best in the Hunting Trilogy! What makes it the best is the simplicity of it all. Everything is done in the most natural, easy to follow. I personally thought that the movie had better sound and there was more variety of the animals. I would have to go back and watch it to find out if this was the one. The acting is also very well done and the music is nice. One of my favorite sequences is when all of the animals go running. The ending <rejected> This is the second and best in the Hunting Trilogy! What makes it the best is that it can only be seen once you've seen all three movies!<br /><br />The first is Hunting of the Bloodhounds. The first is the second was the third: Hunting of the White Deer.<br /><br />I don't know how it was written in, I can only say that they should have just written Hunting of the Deer because it's more fun.<br /><"
+      },
+      {
+        "from": "human",
+        "value": "Being a big fan of Stanley Kubrick's Clockwork Orange there was of course \""
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> Being a big fan of Stanley Kubrick's Clockwork Orange there was of course \"The Shining\" which I really liked. I liked \"The Shining\" a lot as well. This was another Kubrick original and I actually didn't think I could enjoy it even more. The music for this, or \"The Place Where You Live\", was completely original as I have heard it on a number of occasions. The opening and ending music that was in this movie are both fantastic, with the music for the movie's <rejected> Being a big fan of Stanley Kubrick's Clockwork Orange there was of course \"The Shining\". I was not surprised to see that the film that Kubrick directed was in this same genre. Stanley Kubrick directed two films which have both gone on to become classic. The Shining is easily one of the best. There are scenes which are not meant for the average viewer, yet they still have an impact to them. I think that Kubrick got to a point in his career where he was forced to make some of the"
+      },
+      {
+        "from": "human",
+        "value": "Well, I'm a few days late but what the hell....! Any"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> Well, I'm a few days late but what the hell....! Anyways, if you have an extra dollar you can make it up for and even if you don't you can still help. A local company called the \"City\" has set up a few special needs programs for kids which is good for both kids and adults. You can check out their website here: http://www.cityscott.org/. I can't even help you with this one because the website is full <rejected> Well, I'm a few days late but what the hell....! Anyhoo. The movie is a big pile of garbage. The worst things, to me, are the \"funny\" moments with the \"acting\" (I don't mean \"acting\" per se) that are supposed to be \"sociological\" in nature (see above!) The whole movie is so corny, it just can't be helped. There is nothing to like here. If I were to make"
+      },
+      {
+        "from": "human",
+        "value": "As everyone knows by now, 15 Park Avenue is the story of a schizophren"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> As everyone knows by now, 15 Park Avenue is the story of a schizophrenic with a love for all things glamorous who becomes a social climber, but unlike \"Cinderella,\" 15 Park does not feature princesses, princes, or fairy tales.<br /><br />Still, 15 Park Avenue is one of those films with a special feel that makes it a true gem.<br /><br />What was so great about 15 Park Avenue was the portrayal of a childishly loving artist who <rejected> As everyone knows by now, 15 Park Avenue is the story of a schizophrenic named David Geffen, who has a problem with anxiety and moods and it's his life as a musician that revolves around his work with the Geffen Jugend. It is the story of a band called the Jugend and it's members, and what this group is actually doing musically. The Jugend were never able to keep their musical vision alive, and in most cases, their careers were"
+      },
+      {
+        "from": "human",
+        "value": "10 respected directors each shot a short film with operatic arias as"
+      }
+    ],
+    "chosen": {
+      "from": "gpt",
+      "value": "10 respected directors each shot a short film with operatic arias as the main soundtrack and the songs were written by one of these very respected directors of Italian cinema. This is a true film to film quality and it should be seen not only for the music but also for the cinematography, photography and editing. It is one of the few of the Italian-made Italian films to ever achieve international acclaim, the only other being the excellent \"The Lady and the Tramp\" (1970). The"
+    },
+    "rejected": {
+      "from": "gpt",
+      "value": "10 respected directors each shot a short film with operatic arias as well as a film noirs, most of them very different. You're given a short film no. of the film and then you have to decide what you're going to do with it. Some of the directors use noir as a form of visual storytelling (like all the early silent directors) and some of them don't.<br /><br />All in all there are many noir directors of different styles but"
+    }
+  },
+  {
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Frank Sinatra starred in this odd little short from RKO that is now"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> Frank Sinatra starred in this odd little short from RKO that is now gone. The first 15 minutes of it are from 1962. You know who plays this guy (or was it his wife? The opening song in the movie is the same song played on the opening credits for the movie 'Trouble in Paradise') and he plays his daughter, a dancer. What else? This short features a really great performance by Sinatra. But that's about it. I really don't understand what <rejected> Frank Sinatra starred in this odd little short from RKO that is now available on DVD. I'd bet the money they rented it to the director. It's a long, boring (but totally worth seeing) piece of crap. He looks very similar to what he does in \"The Wizard of Oz\" and \"A Christmas Story\" and the whole thing was just kind of boring.<br /><br />What makes this even worse are the bad guys who don't even seem to be actors"
+      },
+      {
+        "from": "human",
+        "value": "The hurried approach that Lewis Seiler takes with King of the Underworld establishes a"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> The hurried approach that Lewis Seiler takes with King of the Underworld establishes a distinct quality that makes the film very unique. It is a film that must be seen in the theater, the full attention which it provides to the actor playing King Richard on a small screen sets the scene up to be a spectacular, yet so realistic. The character of Richard was first introduced to the audience by actor Norman Laffer, who gave the audience a brief summary of his character, King Richard the Great (a.k <rejected> The hurried approach that Lewis Seiler takes with King of the Underworld establishes a movie that takes a while to get going and then just sits there until you think it's about to be over. Seiler really just skips all the normal action in favor of a few long-winded dialogue pieces that don't do any justice to any of the movie's plot holes. His acting is decent (though he has a lot of trouble staying in character), but his performance is pretty much the same as it"
+      },
+      {
+        "from": "human",
+        "value": "I'm going to make this short and sweet. It's not surprising that"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> I'm going to make this short and sweet. It's not surprising that this is a review of a film that is so boring, clich\u00e9-ridden and predictable; it also isn't surprising that the director is such a perfectionist in the style and detail (this, after all, was his movie, after all); also, the cast is pretty good. But the thing you notice about this review of a movie with absolutely no dialogue, no one really seems to care about the characters and story.< <rejected> I'm going to make this short and sweet. It's not surprising that the most hated movie of all time was this film. My wife and I have been watching this film for some time and it has been going back and forth on the TOP IMDB \"Misc.\" list all this time. In short, this film deserves your attention. We can actually go ahead and give it a 3.9 on that rating. We all knew the film would be controversial even before its release. The reason"
+      },
+      {
+        "from": "human",
+        "value": "The movie is not halve as bad as people want to make you believe"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> The movie is not halve as bad as people want to make you believe, it's not even half bad, it's just a good idea put together in the right time. You can do your homework, watch the entire movie first then the previews, it's a film not to be missed. It's one of those movies where the movie just goes on and on, it's like the movie just keeps repeating itself, but the characters don't know why they keep repeating themselves. <br / <rejected> The movie is not halve as bad as people want to make you believe. I was very glad that a person had found a better title and title for a movie than a short. I was so excited to see this because it is so good. And it is really not that bad as I thought. It's just really bad. As soon as this movie comes out you're bound to hear all sorts of things about it. The movie is great, it's nice to see the same characters as"
+      },
+      {
+        "from": "human",
+        "value": "I really think this movie deserves some Oscars! I really don't care what"
+      }
+    ],
+    "chosen": {
+      "from": "gpt",
+      "value": "I really think this movie deserves some Oscars! I really don't care what people say; this movie will make you laugh like an an 8-year-old! I don't care what you think, this movie is worth watching twice. Don't take my word for it, take that for yourself and see it if you have the time! It is absolutely hilarious! The jokes are all real-to-good, so you will know they were written for TV and not for real. The story"
+    },
+    "rejected": {
+      "from": "gpt",
+      "value": "I really think this movie deserves some Oscars! I really don't care what actors play this role, their performance was amazing! I have never played the part of a \"witty\" lady (even with a good script). I have never been the type of \"witty\" ladies that you would see in a movie, so I'm a tad surprised that she and her boyfriend have such a bad time. I liked how she played the part, and it did not bother me in the least."
+    }
+  },
+  {
+    "conversations": [
+      {
+        "from": "human",
+        "value": "------ Spoilers----- Spoilers----- Spoilers--------just a"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> ------ Spoilers----- Spoilers----- Spoilers--------just a reminder on what's good and what's bad: it's the story.The story here is a mixture of 'emotional' and 'political' and it's not to be found in other movies that have been directed by Quentin Tarantino.<br /><br />The idea is of a young American doctor who discovers how to cure people of mental illness.The first of her patients is the mentally unstable and he gets her <rejected> ------ Spoilers----- Spoilers----- Spoilers--------just a bit about the series with two main protagonists. This is a complete throw-back to an age of the first two movies, except for the most part this time, it was a completely different tale. The story is still the same, but it is based on a movie that had no release in Japan. No other details are given.<br /><br />The film was very violent, and not in a good way."
+      },
+      {
+        "from": "human",
+        "value": "I have to say that some of the other reviews of this film I have"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> I have to say that some of the other reviews of this film I have seen are absolutely awful (it's not even funny - so I guess there's not many movies that can be a comedy?)<br /><br />But I'm here to say that this is a must see, and one you'll want to sit and watch. I remember the first time I saw \"The Rocky Horror Picture Show,\" but this one still has the sparkle of that magic. I remember it was so <rejected> I have to say that some of the other reviews of this film I have read have been so ridiculous that I found it almost hilarious. The story takes place during the 1940s on a small fishing vessel. The main character is a young man named \"Mr. K\", who is living and fishing with his father, a sailor and a German sailor. Their relationship is strained, and by the end of the film you are almost certain to be laughing at a number of situations that can be thrown at them"
+      },
+      {
+        "from": "human",
+        "value": "There won't be one moment in this film where you aren't laughing."
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> There won't be one moment in this film where you aren't laughing. I've seen many of the best films of the 21st century and this film is probably the best I've ever seen in my life. And for good reason. The cast was amazing. This wasn't a cast that could have been improved upon. It was just the one or two main guys that made this film as good as it was. I think the movie should be seen on video so that you can watch it <rejected> There won't be one moment in this film where you aren't laughing. This film is a very funny drama that features a very likable cast of actors. I don't think I've ever laughed so much in my entire life. They all do a great job. The only real \"downer\" was how boring the rest of the movie was. The plot was very interesting. Everyone in the movie, except for the police, seemed very natural and realistic. It was very enjoyable. The"
+      },
+      {
+        "from": "human",
+        "value": "I'm amazed that of all the reviews I've looked at nobody seems to"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> I'm amazed that of all the reviews I've looked at nobody seems to have complained about the \"movies\" aspect of this. It has all the typical elements of a Hollywood movie.<br /><br />It is very short, has one of the rarest acting, good photography and good sets.<br /><br />The movie has a nice plot with the twist at the end, which is a big surprise to everyone except the main character. I think what's more interesting is that <rejected> I'm amazed that of all the reviews I've looked at nobody seems to notice how awful this film was. Why is that? If you watch it yourself, you'll see how terrible it is, just like the script. The cast was awful, everyone sounded like they were having fun, the sets were awful and they had an annoying character for the movie, who seemed to play a character who was trying to be one of the actors in the movie. Plus, the directing was horrible and it seemed"
+      },
+      {
+        "from": "human",
+        "value": "In December 1945 a train leaves the central station of Stockholm for Berlin. There"
+      }
+    ],
+    "chosen": {
+      "from": "gpt",
+      "value": "In December 1945 a train leaves the central station of Stockholm for Berlin. There it arrives in the small village of Alib\u00f6, where a woman named Vitti works for the local branch of a bank. The town is a bit out of the way, but the journey to the station is a lot of fun. From this village, the train will travel to the capital. But that is the only thing I can remember of the train.<br /><br />After an hour of waiting in"
+    },
+    "rejected": {
+      "from": "gpt",
+      "value": "In December 1945 a train leaves the central station of Stockholm for Berlin. There is a train from the western Sweden, and the train is headed to the western Germany where many people have gone. The train is carrying people, mostly refugees, to the border, in which there is a big river. The journey is made of many different countries, for which different companies provide different travel methods. They have the ferry and the train. The boat is a very slow way back to Sweden. With the help of"
+    }
+  },
+  {
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Flawless writing and brilliant acting make this unusually delightful and witty plot-"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> Flawless writing and brilliant acting make this unusually delightful and witty plot-driven comedy. The script is clever, original and funny. The show is extremely enjoyable from start to finish, and the cast are especially talented and versatile. The script is superbly conceived and written. Its characters are developed in detail, making this a genuinely memorable and enjoyable viewing experience.<br /><br />Ladies and gentlemen, this is a real winner. It is, however, a disappointing loss to the show- <rejected> Flawless writing and brilliant acting make this unusually delightful and witty plot-setting. The movie begins with the usual set-up with a young and naive schoolgirl getting taken to a magical island, where she goes to live with the mystical Mr. Pest's son. Mr. Pest gives her a magic potion and she awakens, but is told that she is the reincarnation of a famous sorceress. From there she is given a magical suit and magic boots and, along the way"
+      },
+      {
+        "from": "human",
+        "value": "Dear Readers, 2001: A Space Odyssey is Kubrick at his best...although"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> Dear Readers, 2001: A Space Odyssey is Kubrick at his best...although the fact that it's an adaptation of the novel does seem to be making it seem as an overly serious film. This Kubrick tribute is a terrific film about a man who finds his purpose in space exploration.<br /><br />The acting is great, even if you're not as interested in the story as I am. It's also highly touching and uplifting...even if there's not a single romance in the film <rejected> Dear Readers, 2001: A Space Odyssey is Kubrick at his best...although not always, and sometimes, just to let loose.<br /><br />The story goes that the planet is destroyed by an energy beam in which humans have been the unwitting victims. In a quest to find a cure and return the planet to the planet-heaven, our hero Bowman (Richard Linklater) seeks out the help of an alien \"Doctor\", a woman (a woman) whose husband is killed on the"
+      },
+      {
+        "from": "human",
+        "value": "all i can say is that each time i see CONRACK, dir"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> all i can say is that each time i see CONRACK, dir, fathoms and hollands is one of the most impressive film festivals i've ever been to. i feel like the director could go into the woods to get the movie, and when he finds the story, his camera will run out of movie money, because he doesn't know how to tell a story any more. and we really need more films like this because, these are the days, where the only way <rejected> all i can say is that each time i see CONRACK, dirck, jones, borland, robert, i dont say a bad thing about what they have to do, but i could also say how they go about doing it. <br /><br />I watched the last 10 minutes of their first movie together. They had this scene with the davies and jones in the pool in which jones was playing pool and jean was dancing. jones"
+      },
+      {
+        "from": "human",
+        "value": "I liked this a lot. <br /><br />The camera angles"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> I liked this a lot. <br /><br />The camera angles and angles of the actors in this film were really nice, as well. And the plot lines were really easy to follow because it had one scene. <br /><br />This movie was the first TV movie that I saw in years and I must say that it is the best movie I have ever seen. You can even see that TV commercials were directed at me in the background.<br /><br />The cast <rejected> I liked this a lot. <br /><br />The camera angles weren't bad, and the actors were really good. Some of the best lines are:<br /><br />1) - \"Don't laugh when you do something funny. Laugh when you see people trying to be serious\".<br /><br />2) - The first time i watched this movie I was disappointed. There was no dialogue at all, only a lot of action. I would have expected some"
+      },
+      {
+        "from": "human",
+        "value": "With Nurse Betty (2000), acclaimed indie film-maker Neil LaBute"
+      }
+    ],
+    "chosen": {
+      "from": "gpt",
+      "value": "With Nurse Betty (2000), acclaimed indie film-maker Neil LaBute (better known to many as \"Spinal Tap\") sets off to Canada to film in a remote cabin with the help of a grizzled pilot (P.J. Soles, of the acclaimed show \"The Incredible Dr. Seuss' The Cat in the Hat, who was the star of the opening sequence) and a fellow aviator, James M. Kelly (played in the pilot's first scene by the charismatic"
+    },
+    "rejected": {
+      "from": "gpt",
+      "value": "With Nurse Betty (2000), acclaimed indie film-maker Neil LaBute is at the start of the director's \"career\", which has him directing and directing the first of his films for a company called \"The Brain Trust\". This one was a low-budget piece of trash, which is what made it great. LaBute's film is basically just a short film that is based on the idea that a man's mind is his most valuable asset, and that mental illness could be his"
+    }
+  },
+  {
+    "conversations": [
+      {
+        "from": "human",
+        "value": "Surprising, witty, funny and totally engaging, the film grabs a little"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> Surprising, witty, funny and totally engaging, the film grabs a little audience and will be your crowd pleaser. We all know the story and the characters from the book, however, it's the film that has a lot to live up to. With such excellent performances from the leading ladies, it was a dream to see them back for an encore appearance. It's not often that a film can pull all the weight of a book to this level, but it does. It's that <rejected> Surprising, witty, funny and totally engaging, the film grabs a little of what made \"A Streetcar Named Desire\" so memorable in a new light. The musical score, in particular, is delightful.<br /><br />A truly memorable musical film, with a score that makes the best of the great music by the Rolling Stones.<br /><br />A must see for fans of Billy Gibbons, Roy Orbison, Paul Lukas, Paul Reiser, Charles Wilson, George"
+      },
+      {
+        "from": "human",
+        "value": "The Gilmore girls is about a mother who had a daughter when she was 16"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> The Gilmore girls is about a mother who had a daughter when she was 16 and a child when she was eight. She moves to a new neighborhood and tries to bring her daughter back to herself and the other children in her neighborhood. Her life is a little messy, she meets a number of interesting people as a grandmother, grandmother and grandmother, she does her best to help them in some way. The series stars Kirstie Alley, Claire Danes and Stephen Dorf as the girls, which will also <rejected> The Gilmore girls is about a mother who had a daughter when she was 16 and she fell out with her, she had the daughter by a man with different fathers, she gave her daughter to a man and after that she gave her daughter back to her mother after she has to have a mental and physical examination, she's just found out that she's pregnant. She's got three girls under her, you're seeing it now, as I said the mother has a daughter, she's a good mother"
+      },
+      {
+        "from": "human",
+        "value": "Very good \"Precoder\" starring Dick Barthelmess, which in"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> Very good \"Precoder\" starring Dick Barthelmess, which in itself is a great action movie. Barthelmess has long played \"a bad guy\", and although he had a very \"good\" career from 1960-1983, we can say it was the bad guy that he played. <br /><br />I love Dick Barthelmess, and I loved it with my friend and his wife in a \"Cinema\" here. The story focuses on Dick, a former <rejected> Very good \"Precoder\" starring Dick Barthelmess, which in itself is a pre-coder, or in other words, the film equivalent of the video store. This is a great film with its wonderful cast (Barthelmess is also in the cast), but the acting is absolutely horrible. For some reason, Dick Barthelmess and Robert G. Muehlhauser are in the same film. Muehlhauser is the one who starts the conversation (I"
+      },
+      {
+        "from": "human",
+        "value": "This show is really great. It's smart.It's funny.It"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> This show is really great. It's smart.It's funny.It's not scary.Its a great show. One day I will watch it.The one thing I can say this show is great,I have a big collection of music on my computer,so if you don't have music on there it's pretty much useless. If you have music on there it would be awesome. If you have music on there it will be even better. If you have music on it,that's <rejected> This show is really great. It's smart.It's funny.It's the same thing,same character. All that comes to mind as good shows of the 1980's. It's a shame that after this show,it's just become an episode on the CBS daytime talk show. There are a lot of good things that have happened in the last 15 years,but it feels like the cast is holding it back. I mean, they had this wonderful chemistry in the late nineties. I"
+      },
+      {
+        "from": "human",
+        "value": "A lumberman finds a young cougar in need of help. To young"
+      }
+    ],
+    "chosen": {
+      "from": "gpt",
+      "value": "A lumberman finds a young cougar in need of help. To young \"Cougar Girl\" he agrees. He then proceeds to get her out of the jungle. To the man (Lumberman) he agrees to help. The young Cougar Girl (Cougar Girl) begins to take an interest in the young man who is the man who has just started working with her. As she tries to get to know the man, she finds out that she is not the only one"
+    },
+    "rejected": {
+      "from": "gpt",
+      "value": "A lumberman finds a young cougar in need of help. To young and naive Christine, he is a kindly and funny old man, to her an angry and menacing old man. Christine's father disapproves of the father's behaviour, and he is never fully happy with Christine's mother. After a day on which Christine's mother goes to the fields, they return home, and after some time, there is a terrible storm. When the house is badly flooded, it is quickly left to its"
+    }
+  },
+  {
+    "conversations": [
+      {
+        "from": "human",
+        "value": "This is surely British humour at its best. It tends to grow on you"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> This is surely British humour at its best. It tends to grow on you and doesn't let you have any \"woken\" moments. A very simple premise, with a cast of all very experienced actors, but it is all so much more fun for all. No matter how it is set up, it does not matter in the end, the laughs come thick and fast. And of course the soundtrack is just brilliant. A real classic, as it always has been. Well done. Recommended. <rejected> This is surely British humour at its best. It tends to grow on you with age, you realise the jokes have been done many times before, and they are delivered with the same charm and humour as in any other comedy. The humour of the cast is superb. I found that none of the characters were ever boring and that they could not possibly be all wrong. I was particularly surprised by the work of the script and the direction, and was particularly pleased by the acting of the various cast members ("
+      },
+      {
+        "from": "human",
+        "value": "Saw this last night at the 7th Annual NYC Home Film Festival --"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> Saw this last night at the 7th Annual NYC Home Film Festival -- a really amazing film -- but it's not here as it should be. We have a full list of the features here. Myself & the film's director, Michael Schmeller, were there in person for many segments -- I'm a Schmeller fan who loves Michael's work, so it was kind of like attending \"family fun.\" <br /><br />There's lots of wonderful shots, and <rejected> Saw this last night at the 7th Annual NYC Home Film Festival -- and that is saying a lot. The film is absolutely horrible. The script is one long and I really would not consider myself an actor. The only part I enjoyed was the little scene with the police. The actors are all awful in the film. The cast is completely unbelievable. It has been almost three years since I've seen this film. What a disappointment. I really wish they would cut out all the dialogue."
+      },
+      {
+        "from": "human",
+        "value": "There are many film now on DVD, but producers had forgotten some titt"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> There are many film now on DVD, but producers had forgotten some titties, that would be some of the new titties in some movies that were to be shown, like: \"Reunions\", \"The Matrix\". But what would be good movie would be the original titties and a few new titties on top, the old ones would be not good as well. What I mean is that the people would be boring and the movie will be boring, especially the special <rejected> There are many film now on DVD, but producers had forgotten some titties and we will watch on DVD too.<br /><br />This film was so-so.<br /><br />It's really sad. That was the only good thing to come out of the film.<br /><br />The acting sucks, it really does. How could they just put this kind of crappy acting in a movie with big names like James Gandolfini and Johnathon Banks? It just"
+      },
+      {
+        "from": "human",
+        "value": "Great fun for an evening on the sofa. Don't expect Academy Award stuff"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> Great fun for an evening on the sofa. Don't expect Academy Award stuff, this is the most honest and honest film I've seen in a long time. For all the great work of Troma, this film is the most honest film ever. The acting is all very real. All the characters in this are very real. It is funny to me. For me, it is much more than a comedy. It is about all the human experiences that go into making it for me. I like <rejected> Great fun for an evening on the sofa. Don't expect Academy Award stuff here though. Instead we have an entertaining show that we can watch whenever we have the time. It's great that this show has some kind of budget since we can't just have everything filmed in Vancouver.<br /><br />The show has some of the funniest moments I have ever seen on TV. I haven't really thought of what to say about the comedy but it's definitely a hit with the comedy community."
+      },
+      {
+        "from": "human",
+        "value": "When I first saw this film on video in a department store... it intrigued"
+      }
+    ],
+    "chosen": {
+      "from": "gpt",
+      "value": "When I first saw this film on video in a department store... it intrigued me. I have to say it was a little disappointing for me, but also a lot of fun. I loved the whole film, from the opening montage, to the beginning of the film itself, with all the music, and the special effects. There was nothing else that bothered me, besides the acting by the two actors. They were both really well done, the director really got me involved in what happened, even"
+    },
+    "rejected": {
+      "from": "gpt",
+      "value": "When I first saw this film on video in a department store... it intrigued me. I would go out of my way to get another copy, just to watch. I am a big fan of \"Seinfeld\" (a.k.a. \"The Soup\") so I decided I would just have to get this one too.<br /><br />This film had really nothing to recommend it. You might say it had little, if any, plot.<br /><br />There were"
+    }
+  },
+  {
+    "conversations": [
+      {
+        "from": "human",
+        "value": "That's a bad, raunchy, predictable, tacky, sal"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> That's a bad, raunchy, predictable, tacky, salacious, stupid comedy, it's just not funny. I don't even think there's a decent comedy here. I give it 0.5, only because it's actually quite enjoyable. And that's the key point - the movie has almost nothing worthwhile to say. A few of the bits are really rather amusing in the context of the film but that's the whole film, there's nothing to talk about other than that <rejected> That's a bad, raunchy, predictable, tacky, salacious, sleazy-baddie movie. The plot is bad. The acting, not much of it, is very uninspired. The characterizations are totally unwarranted, and the lead actress is a big fat loser who's too old for any of this garbage. I have no real interest in the lead actor in this movie, and neither does most of the other moviegoers. No one wants to waste their time"
+      },
+      {
+        "from": "human",
+        "value": "Chuck Jones's 'Rabbit Seasoning', the second in the much beloved"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> Chuck Jones's 'Rabbit Seasoning', the second in the much beloved film series of the same name that was created by Jack & Peter Schmoels with Johnny Weissmuller, has been shown in the UK in one form or another as late as 1993. The film was based on an early play by Arthur Miller, the plot is very similar to Miller's, and the two actors play identical roles. The story is in the same vein, and the movie is loosely based on Miller's <rejected> Chuck Jones's 'Rabbit Seasoning', the second in the much beloved series of films, is the tale of the fate of a rabbit, in the end leading to the end of the film as we see Rabbit and all of the film's characters and plot points come to a crashing halt. So much action and suspense comes to a standstill in the closing minutes that Jones takes to the brink of destruction which is left for an almost incomprehensible sequence of a rabbit dying in an incinerator which is finally"
+      },
+      {
+        "from": "human",
+        "value": "I'm absolutely disgusted this movie isn't being sold. All who love this"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> I'm absolutely disgusted this movie isn't being sold. All who love this movie should watch it. I was able to put my hands down and hold my head between my legs and it was a much harder process to remove and I thought it was a big relief to get out and not have to feel a huge amount of fear about who I was and what was about to happen. It was a shame I didn't get to see it in its entirety and I wish more than a few people knew that <rejected> I'm absolutely disgusted this movie isn't being sold. All who love this movie are the main characters, I wish there was a way to take the film's plot out of context and just enjoy this movie's story.<br /><br />\"What Kind of Man\" is a terrible movie. It has the absolute worst acting (and that's saying something) and an absolutely horrible plot that is almost nonsensical. It's almost like a parody of an indie movie with a silly plot, stupidly"
+      },
+      {
+        "from": "human",
+        "value": "when I first heard about this movie, I noticed it was one of the"
+      },
+      {
+        "from": "gpt",
+        "value": "<chosen> when I first heard about this movie, I noticed it was one of the ones with the worst cast (with no actors) I've seen in quite some time. After all, the movie was being made in Japan and it needed a high budget to get there.<br /><br />However, the cast was excellent! There is lots of chemistry between the actors and the actresses. The one problem for me, was that it never got off the ground in Japan.<br /><br />What <rejected> when I first heard about this movie, I noticed it was one of the two films (the other being the one we did, \"The Dark Knight Returns\") that the actor who plays the killer \"Batman\" was in. I did not know where to find this movie, and I think the reason it is not listed in IMDb is because it was NOT included in IMDb's Top 25 Horror/Thriller Films. Well, I did see this movie, and it is, without a"
+      },
+      {
+        "from": "human",
+        "value": "An evil land baron is holding up water to a group of ranchers"
+      }
+    ],
+    "chosen": {
+      "from": "gpt",
+      "value": "An evil land baron is holding up water to a group of ranchers, making them rich, giving them a good share of the harvest of corn in the form of cows, sheep and horses. The man keeps a very bad habit and it is obvious to all - there is a good reason to be so attached to him.<br /><br />The movie is so overrated that I did not go looking for it. For this and other reasons, it is very much a case for not"
+    },
+    "rejected": {
+      "from": "gpt",
+      "value": "An evil land baron is holding up water to a group of ranchers. The chief of the ranch holds the land hostage and, for no apparent reason, decides to sell it. The only two buyers are the two main characters, and one of the characters is a woman. The main characters do not understand why she is involved, or why she has a baby. She and the other main characters try, without much success, to find out about the land's ownership. Unfortunately, the other main"
+    }
+  }
+]

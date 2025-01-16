@@ -53,7 +53,7 @@ class DataArguments:
         default=False,
         metadata={"help": "Whether or not to disable the mask on the prompt."},
     )
-    mask_history: bool = field(
+    mask_history: bool = field( # ONLY FOR SFT
         default=False,
         metadata={"help": "Whether or not to mask the history and train on the last turn only."},
     )
