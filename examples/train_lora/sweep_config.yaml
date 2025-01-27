@@ -35,6 +35,8 @@ command:
   - "qwen"
   - "--cutoff_len"
   - "2048"
+  - "--default_system"
+  - ""You are a helpful assistant""
   - "--overwrite_cache"
   - "true"
   - "--preprocessing_num_workers"

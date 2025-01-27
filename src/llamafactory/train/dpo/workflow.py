@@ -80,6 +80,7 @@ def run_dpo(
 
     # Training
     if training_args.do_train:
+        import pdb; pdb.set_trace()
         train_result = trainer.train(resume_from_checkpoint=training_args.resume_from_checkpoint)
         trainer.save_model()
         if finetuning_args.include_effective_tokens_per_second:

@@ -350,12 +350,17 @@ def get_template_and_fix_tokenizer(tokenizer: "PreTrainedTokenizer", data_args: 
     r"""
     Gets chat template and fixes the tokenizer.
     """
+    # import pdb; pdb.set_trace()
     if data_args.template is None:
         template = TEMPLATES["empty"]  # placeholder
     else:
         template = TEMPLATES.get(data_args.template, None)
         if template is None:
             raise ValueError(f"Template {data_args.template} does not exist.")
+    
+    ### EDIT ###
+    template.default_system = "Your task is to generate completions that align with the user's implicit preferences and values as inferred from the conversation history. Instructions:\n1. Carefully analyze the provided conversation history between the user and the assistant.\n2. Use the context of the history to infer the user's preferences, tone, and intent.\n3. Provide a completion for the user's latest input (prepended by 'Generate completion: ') that aligns with their preferences."
+    ######
 
     if template.mm_plugin.__class__.__name__ != "BasePlugin":
         check_version("transformers>=4.45.0")
