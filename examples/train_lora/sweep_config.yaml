@@ -1,5 +1,5 @@
 # srun --mem=48GB -c 4 --gres=gpu:1 --time=1-00:00:00 --qos=long -p a40 -n 1 --pty bash
-# srun --mem=48GB -c 4 --gres=gpu:1 --account=deadline --qos=deadline -p a40 -n 1 --pty bash
+# srun --mem=48GB -c 4 --gres=gpu:1 --account=deadline --qos=deadline -p a40 -n 1 --pty --time=1-00:00:00 bash
 program: llamafactory-cli
 method: random
 metric:
@@ -9,7 +9,7 @@ parameters:
   learning_rate:
     values: [1.0e-5, 2.5e-5, 5.0e-5, 7.5e-5, 1.0e-4, 5.0e-4]
   num_train_epochs:
-    values: [1, 2, 3]
+    values: [3]
   pref_beta: 
     values: [0.05, 0.075, 0.1, 0.15, 0.0175, 0.2]
 command:
@@ -35,8 +35,6 @@ command:
   - "qwen"
   - "--cutoff_len"
   - "2048"
-  - "--default_system"
-  - ""You are a helpful assistant""
   - "--overwrite_cache"
   - "true"
   - "--preprocessing_num_workers"
@@ -72,7 +70,7 @@ command:
   - "--eval_steps"
   - "500"
   - "--output_dir"
-  - "/scratch/ssd004/scratch/laualli1/qwen1.5B_instruct_ppt_keertana_standard_cutofflen2048_sweep/"
+  - "/scratch/ssd004/scratch/laualli1/qwen1.5B_instruct_ppt_keertana_standard_cutofflen2048_sysprompt_sweep/"
   - "--run_name"
-  - "run_0103"
+  - "run_0127"
   - ${args}

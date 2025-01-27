@@ -10,7 +10,7 @@ pref_beta: 0.1
 pref_loss: sigmoid  # [sigmoid (dpo), orpo, simpo]
 
 ### dataset
-dataset: keertana_dpo_1000
+dataset: keertana_dpo_1000_sysprompt
 template: qwen
 cutoff_len: 2048
 max_samples: 1000

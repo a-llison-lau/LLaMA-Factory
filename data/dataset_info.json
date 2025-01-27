@@ -433,6 +433,16 @@
       "rejected": "rejected"
     }
   },
+  "keertana_dpo_1000_sysprompt": {
+    "file_name": "keertana_dpo_1000_sysprompt.json",
+    "ranking": true,
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
   "keertana_dpo_standard": {
     "file_name": "keertana_dpo_standard.json",
     "ranking": true,

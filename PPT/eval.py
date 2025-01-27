@@ -1,4 +1,4 @@
-# srun --mem=48GB -c 4 --gres=gpu:1 --time=1-00:00:00 --qos=long -p a40 -n 1 --pty bash
+# srun --mem=48GB -c 4 --gres=gpu:1 --time=2-00:00:00 --qos=long -p a40 -n 1 --pty bash
 # !import code; code.interact(local=vars())
 import random
 import os, sys
