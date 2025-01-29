@@ -1,17 +1,14 @@
 # srun --mem=48GB -c 4 --gres=gpu:1 --time=2-00:00:00 --qos=long -p a40 -n 1 --pty bash
 # !import code; code.interact(local=vars())
 import random
-import os, sys
 from typing import Optional, Tuple, Dict, Any
-from tqdm import tqdm
-from peft import PeftModel, PeftConfig
 from torch.utils.data import DataLoader
 
 import json
 
 import torch
 import transformers
-from transformers import HfArgumentParser, Seq2SeqTrainingArguments, AutoModelForCausalLM, AutoTokenizer, AutoModel
+from transformers import HfArgumentParser, Seq2SeqTrainingArguments, AutoModelForCausalLM
 from datasets import load_dataset
 
 from llamafactory.train.callbacks import LogCallback
@@ -38,17 +35,17 @@ _TRAIN_CLS = Tuple[ModelArguments, DataArguments, Seq2SeqTrainingArguments, Fine
 # dataset_file = "/h/laualli1/LLaMA-Factory/data/keertana_dpo_1000.json"
 YAML_PATH = "/h/laualli1/LLaMA-Factory/examples/train_lora/llama3_lora_dpo.yaml"
 ADAPTER_MODEL_SAVEPATH = "/scratch/ssd004/scratch/laualli1/qwen1.5B_instruct_ppt_keertana_1000_cutofflen2048_adapter"
-MERGED_MODEL_SAVEPATH = "/scratch/ssd004/scratch/laualli1/qwen1.5B_instruct_standard_keertana_standard_cutofflen2048_merged"
+MERGED_MODEL_SAVEPATH = "/scratch/ssd004/scratch/laualli1/qwen1.5B_instruct_ppt_keertana_1000_sysprompt_cutofflen2048_merged"
 TEST_MODEL_PATH = "/scratch/ssd004/scratch/laualli1/qwen_sft_test"
 
 ### Create eval dataset ###
-GENERATE_EVAL_DATASET = False
+GENERATE_EVAL_DATASET = True
 if GENERATE_EVAL_DATASET:
     DATASET_SAVEPATH = "/h/laualli1/LLaMA-Factory/data/"
     MAX_NUM_TURNS = 8
     NUM_TRIALS = 10
     dataset = load_dataset("keertanavc/imdb_sentiment_grammar_dpo_multipreference")
-    eval_dataset = dataset['test']
+    eval_dataset = dataset['train']
 
     organized_data = {}
     for row in eval_dataset:
@@ -136,14 +133,14 @@ if GENERATE_EVAL_DATASET:
         """Save the data to JSON files
         """
         for turn in range(num_turns):
-            filename = save_path + f"keertana_dpo_label_{label}_turn_{turn + 1}.json"
+            filename = save_path + f"train_keertana_dpo_label_{label}_turn_{turn + 1}.json"
             with open(filename, 'w') as f:
                 json.dump(json_data[turn], f, indent=2)
 
     save_json_data(json_data_label1, label1, MAX_NUM_TURNS, DATASET_SAVEPATH)
     save_json_data(json_data_label2, label2, MAX_NUM_TURNS, DATASET_SAVEPATH)
 
-# import pdb; pdb.set_trace()
+import pdb; pdb.set_trace()
 
 ### Functions (modified) from llamafactory ###
 
@@ -187,7 +184,6 @@ def compute_rm(
 ):
     callbacks = []
     callbacks.append(LogCallback())
-    print("now loading tokenizer")
 
     # Loads pretrained tokenizer and optionally loads processor
     tokenizer_module = load_tokenizer(model_args)   # safe
@@ -204,41 +200,13 @@ def compute_rm(
     training_args.do_train = False
     training_args.do_eval = True
 
-    # model = AutoModelForCausalLM.from_pretrained("/model-weights/Qwen2.5-1.5B-Instruct")
-    # model.to(training_args.device)
-
     # # Reference model (frozen)
     ref_model = model
     ref_model.eval()
 
     policy_model = AutoModelForCausalLM.from_pretrained(MERGED_MODEL_SAVEPATH)
     policy_model.eval()
-    # policy_model.to(training_args.device)
-    # ref_model = AutoModelForCausalLM.from_pretrained("/model-weights/Qwen2.5-1.5B-Instruct")
-    # ref_model.to(training_args.device)
-
-    # ref_model_state_dict = ref_model.state_dict()
-    # policy_model_state_dict = policy_model.state_dict()
-    # for key in ref_model_state_dict.keys():
-    #     stripped_key = key.removeprefix("model.")
-    #     if stripped_key in policy_model_state_dict:
-    #         diff = (ref_model_state_dict[key] - policy_model_state_dict[key]).abs().sum()
-    #         print(f"Layer {key}: Difference = {diff.item()}")
-
-    
-
-    # policy_model = PeftModel.from_pretrained(ref_model, ADAPTER_MODEL_SAVEPATH)
     policy_model.to(training_args.device)
-
-    # for param_name, param_value in policy_model.named_parameters():
-    #     print(param_name, param_value.shape)
-    #     print(param_value[:5])
-    #     break
-
-    # for param_name, param_value in ref_model.named_parameters():
-    #     print(param_name, param_value.shape)
-    #     print(param_value[:5])
-    #     break
 
     margins = []
     accuracies = []
@@ -259,8 +227,6 @@ def compute_rm(
             **tokenizer_module,
         )
 
-        # import pdb; pdb.set_trace()
-
         dataloader = DataLoader(
             eval_dataset,
             batch_size=training_args.per_device_eval_batch_size,
@@ -268,24 +234,23 @@ def compute_rm(
             shuffle=True
         )
 
-        # Fetch a batch
         batch_accuracies = []
         batch_margins = []
+        # Loop over each datapoint
         for batch in dataloader:
-        # batch = next(iter(dataloader))
-            import pdb; pdb.set_trace()
-            # batch['input_ids'] shape (2, 136) contains one datapoint ()
-            # batch['labels'] shape (2, 136) contains 
+            # batch['input_ids'] shape (2, 136) contains one datapoint all token ids
+            # batch['labels'] shape (2, 136) contains only chosen or rejected ids from last turn
             
             batch = {k: v.to(training_args.device) for k, v in batch.items()}
             batch = {k: v.detach().clone() for k, v in batch.items()}
 
+            # Same calculation from concatenated_forward in dpo/trainer.py
             # Compute logits from the policy model
             all_policy_logits = policy_model(
                 **batch, return_dict=True, use_cache=False
             ).logits.to(torch.float32) # (2, 136, 151936)
 
-            # import pdb; pdb.set_trace()
+            # Computes logits 
             all_policy_logps, _ = get_batch_logps(logits=all_policy_logits, labels=batch["labels"]) # (2)
 
             # Compute logits from the reference model
@@ -299,19 +264,21 @@ def compute_rm(
             policy_chosen_logps, policy_rejected_logps = all_policy_logps.split(batch_size, dim=0)
             ref_chosen_logps, ref_rejected_logps = all_ref_logps.split(batch_size, dim=0)
 
-            # import pdb; pdb.set_trace()
+            ##### DPOTrainer ####
+            chosen_rewards = beta * (policy_chosen_logps - ref_chosen_logps)
+            rejected_rewards = beta * (policy_rejected_logps - ref_rejected_logps)
+            margin = (chosen_rewards - rejected_rewards).item()
+            ####
 
+            ##### Mine ####
             # Compute rewards for policy model and reference model
-            chosen_rewards = torch.exp((policy_chosen_logps - ref_chosen_logps)) * beta
-            rejected_rewards = torch.exp((policy_rejected_logps - ref_rejected_logps)) * beta
+            # chosen_rewards = torch.exp((policy_chosen_logps - ref_chosen_logps)) * beta
+            # rejected_rewards = torch.exp((policy_rejected_logps - ref_rejected_logps)) * beta
             accuracy = (chosen_rewards) >= (rejected_rewards)
-
             batch_accuracies.append(accuracy)
-
-            # import pdb; pdb.set_trace()
-
-            # Compute the reward margin
-            margin = chosen_rewards.item() - rejected_rewards.item()
+            # # Compute the reward margin
+            # margin = chosen_rewards.item() - rejected_rewards.item()
+            ####
             
             batch_margins.append(margin)
         
@@ -323,9 +290,8 @@ def compute_rm(
 
 ### Run ###
 model_args, data_args, training_args, finetuning_args, generating_args = get_train_args()
-rm, accuracy = compute_rm(model_args, data_args, training_args, finetuning_args, turn_eval_datasets=["keertana_dpo_label_15_turn_1", "keertana_dpo_label_15_turn_2", "keertana_dpo_label_15_turn_3", "keertana_dpo_label_15_turn_4"], beta=0.1)
-                                                                                           #, "keertana_dpo_label_0_turn_3", "keertana_dpo_label_0_turn_4", "keertana_dpo_label_0_turn_5", "keertana_dpo_label_0_turn_6"], beta=0.1)
-                #, "keertana_dpo_label_0_turn_7", "keertana_dpo_label_0_turn_8"], beta=0.1)
+rm, accuracy = compute_rm(model_args, data_args, training_args, finetuning_args, turn_eval_datasets=["keertana_dpo_label_0_turn_1_sysprompt", "keertana_dpo_label_0_turn_2_sysprompt", "keertana_dpo_label_0_turn_3_sysprompt", "keertana_dpo_label_0_turn_4_sysprompt"], beta=0.2)
+
 print(f"reward margin: {rm}")
 print(f"accuracy: {accuracy}")
 

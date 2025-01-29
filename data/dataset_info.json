@@ -573,6 +573,56 @@
       "rejected": "rejected"
     }
   },
+  "keertana_dpo_label_0_turn_1_sysprompt": {
+    "file_name": "keertana_dpo_label_0_turn_1_sysprompt.json",
+    "ranking": true,
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "keertana_dpo_label_0_turn_2_sysprompt": {
+    "file_name": "keertana_dpo_label_0_turn_2_sysprompt.json",
+    "ranking": true,
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "keertana_dpo_label_0_turn_3_sysprompt": {
+    "file_name": "keertana_dpo_label_0_turn_3_sysprompt.json",
+    "ranking": true,
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "keertana_dpo_label_0_turn_4_sysprompt": {
+    "file_name": "keertana_dpo_label_0_turn_4_sysprompt.json",
+    "ranking": true,
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "keertana_dpo_label_0_turn_5_sysprompt": {
+    "file_name": "keertana_dpo_label_0_turn_5_sysprompt.json",
+    "ranking": true,
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
   "dpo_zh_demo": {
     "file_name": "dpo_zh_demo.json",
     "ranking": true,

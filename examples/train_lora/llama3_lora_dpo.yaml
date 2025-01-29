@@ -6,21 +6,20 @@ stage: dpo
 do_train: true
 finetuning_type: lora
 lora_target: all
-pref_beta: 0.1
+pref_beta: 0.2
 pref_loss: sigmoid  # [sigmoid (dpo), orpo, simpo]
 
 ### dataset
 dataset: keertana_dpo_1000_sysprompt
 template: qwen
 cutoff_len: 2048
-max_samples: 1000
 overwrite_cache: true
 preprocessing_num_workers: 16
 
 ### output
 report_to: wandb
-run_name: run_2
-output_dir: /scratch/ssd004/scratch/laualli1/qwen1.5B_instruct_ppt_test_system_prompt
+run_name: run_0129
+output_dir: /scratch/ssd004/scratch/laualli1/test0129_qwen1.5B_instruct_ppt_keertana_1000_sysprompt_cutofflen2048_adapter
 logging_steps: 10
 save_steps: 500
 plot_loss: true
@@ -29,7 +28,7 @@ overwrite_output_dir: true
 ### train
 per_device_train_batch_size: 1
 gradient_accumulation_steps: 8
-learning_rate: 0.0001
+learning_rate: 0.000075
 num_train_epochs: 3.0
 lr_scheduler_type: cosine
 warmup_ratio: 0.1

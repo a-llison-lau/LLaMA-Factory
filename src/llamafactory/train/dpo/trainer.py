@@ -194,8 +194,10 @@ class CustomDPOTrainer(DPOTrainer):
         """
         if self.finetuning_args.use_ref_model:
             batch = nested_detach(batch, clone=True)  # avoid error
+        
+        # batch is (2, 680)
 
-        all_logits: "torch.Tensor" = model(**batch, return_dict=True, use_cache=False).logits.to(torch.float32)
+        all_logits: "torch.Tensor" = model(**batch, return_dict=True, use_cache=False).logits.to(torch.float32) 
         all_logps, valid_length = get_batch_logps(logits=all_logits, labels=batch["labels"])
         if self.loss_type in ["ipo", "orpo", "simpo"]:
             all_logps = all_logps / valid_length

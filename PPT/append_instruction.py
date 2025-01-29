@@ -1,7 +1,10 @@
 import json
 
-input_filepath = "/h/laualli1/LLaMA-Factory/data/keertana_dpo_1000.json"
-output_filepath = "/h/laualli1/LLaMA-Factory/data/keertana_dpo_1000_sysprompt.json"
+# input_filepath = "/h/laualli1/LLaMA-Factory/data/keertana_dpo_1000.json"
+# output_filepath = "/h/laualli1/LLaMA-Factory/data/keertana_dpo_1000_sysprompt.json"
+
+input_filepath = "/h/laualli1/LLaMA-Factory/data/keertana_dpo_label_0_turn_5.json"
+output_filepath = "/h/laualli1/LLaMA-Factory/data/keertana_dpo_label_0_turn_5_sysprompt.json"
 
 with open(input_filepath, "r", encoding="utf-8") as infile:
     data = json.load(infile)

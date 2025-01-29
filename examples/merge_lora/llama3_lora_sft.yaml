@@ -4,14 +4,14 @@
 # model_name_or_path: meta-llama/Meta-Llama-3-8B-Instruct
 model_name_or_path: /model-weights/Qwen2.5-1.5B-Instruct
 # adapter_name_or_path: saves/llama3-8b/lora/sft
-adapter_name_or_path: /scratch/ssd004/scratch/laualli1/qwen1.5B_instruct_standard_keertana_standard_cutofflen2048_adapter
+adapter_name_or_path: /scratch/ssd004/scratch/laualli1/qwen1.5B_instruct_ppt_keertana_1000_sysprompt_cutofflen2048_adapter
 # template: llama3
 template: qwen
 finetuning_type: lora
 trust_remote_code: true
 
 ### export
-export_dir: /scratch/ssd004/scratch/laualli1/qwen1.5B_instruct_standard_keertana_standard_cutofflen2048_merged
+export_dir: /scratch/ssd004/scratch/laualli1/qwen1.5B_instruct_ppt_keertana_1000_sysprompt_cutofflen2048_merged
 export_size: 2
 export_device: cpu
 export_legacy_format: false

@@ -10,7 +10,7 @@
 #SBATCH --partition=a40
 #SBATCH --account=deadline
 #SBATCH --qos=deadline
-#SBATCH --time=2-00:00:00
+#SBATCH --time=1-00:00:00
 
 conda_env="llm"
 source activate $conda_env
