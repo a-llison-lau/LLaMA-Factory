@@ -17,5 +17,5 @@ source activate $conda_env
 
 # wandb agent allison-lau-university-of-toronto/LLaMA-Factory/ytgfkmye
 # llamafactory-cli train examples/train_lora/llama3_lora_dpo.yaml
-wandb agent allison-lau-university-of-toronto/LLaMA-Factory/qg4e18uf
+wandb agent allison-lau-university-of-toronto/LLaMA-Factory/bew3pau9
 

@@ -176,6 +176,23 @@ class PissaConvertCallback(TrainerCallback):
                 setattr(model.peft_config["default"], "init_lora_weights", init_lora_weights)
 
 
+class DataCompilationCallback(TrainerCallback):
+    r"""
+    A callback for sampling data.
+    """
+
+    @override
+    def on_epoch_begin(self, args: "TrainingArguments", state: "TrainerState", control: "TrainerControl", **kwargs):
+        trainer = kwargs['trainer']
+        print(f"Formatting data at the beginning of epoch {state.epoch + 1}")
+        trainer.train_dataset = self._format_dataset(trainer.train_dataset)
+        trainer._train_dataloader = None
+    
+    def _format_dataset(self, dataset):
+        formatted_dataset = dataset
+        return formatted_dataset
+
+
 class LogCallback(TrainerCallback):
     r"""
     A callback for logging training and evaluation status.

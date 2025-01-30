@@ -25,7 +25,7 @@ from ..extras.constants import V_HEAD_SAFE_WEIGHTS_NAME, V_HEAD_WEIGHTS_NAME
 from ..extras.packages import is_ray_available
 from ..hparams import get_infer_args, get_ray_args, get_train_args, read_args
 from ..model import load_model, load_tokenizer
-from .callbacks import LogCallback, PissaConvertCallback, ReporterCallback
+from .callbacks import LogCallback, PissaConvertCallback, DataCompilationCallback, ReporterCallback
 from .dpo import run_dpo
 from .kto import run_kto
 from .ppo import run_ppo
@@ -58,6 +58,9 @@ def _training_function(config: Dict[str, Any]) -> None:
     if finetuning_args.use_swanlab:
         callbacks.append(get_swanlab_callback(finetuning_args))
 
+    ### EDIT ###
+    # callbacks.append(DataCompilationCallback())
+    ######
     callbacks.append(ReporterCallback(model_args, data_args, finetuning_args, generating_args))  # add to last
 
     if finetuning_args.stage == "pt":
@@ -80,6 +83,7 @@ def run_exp(args: Optional[Dict[str, Any]] = None, callbacks: Optional[List["Tra
     args = read_args(args)
     ray_args = get_ray_args(args)
     callbacks = callbacks or []
+    # import pdb; pdb.set_trace()
     if ray_args.use_ray:
         callbacks.append(RayTrainReportCallback())
         trainer = get_ray_trainer(

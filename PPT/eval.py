@@ -39,7 +39,7 @@ MERGED_MODEL_SAVEPATH = "/scratch/ssd004/scratch/laualli1/qwen1.5B_instruct_ppt_
 TEST_MODEL_PATH = "/scratch/ssd004/scratch/laualli1/qwen_sft_test"
 
 ### Create eval dataset ###
-GENERATE_EVAL_DATASET = True
+GENERATE_EVAL_DATASET = False
 if GENERATE_EVAL_DATASET:
     DATASET_SAVEPATH = "/h/laualli1/LLaMA-Factory/data/"
     MAX_NUM_TURNS = 8
@@ -139,8 +139,6 @@ if GENERATE_EVAL_DATASET:
 
     save_json_data(json_data_label1, label1, MAX_NUM_TURNS, DATASET_SAVEPATH)
     save_json_data(json_data_label2, label2, MAX_NUM_TURNS, DATASET_SAVEPATH)
-
-import pdb; pdb.set_trace()
 
 ### Functions (modified) from llamafactory ###
 
@@ -290,7 +288,7 @@ def compute_rm(
 
 ### Run ###
 model_args, data_args, training_args, finetuning_args, generating_args = get_train_args()
-rm, accuracy = compute_rm(model_args, data_args, training_args, finetuning_args, turn_eval_datasets=["keertana_dpo_label_0_turn_1_sysprompt", "keertana_dpo_label_0_turn_2_sysprompt", "keertana_dpo_label_0_turn_3_sysprompt", "keertana_dpo_label_0_turn_4_sysprompt"], beta=0.2)
+rm, accuracy = compute_rm(model_args, data_args, training_args, finetuning_args, turn_eval_datasets=["train_keertana_dpo_label_4_turn_1_sysprompt", "train_keertana_dpo_label_4_turn_2_sysprompt", "train_keertana_dpo_label_4_turn_3_sysprompt", "train_keertana_dpo_label_4_turn_4_sysprompt"], beta=0.2)
 
 print(f"reward margin: {rm}")
 print(f"accuracy: {accuracy}")
