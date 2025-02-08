@@ -1,13 +1,20 @@
 from datasets import load_dataset
+import datasets
+from huggingface_hub import hf_hub_download
 import random
 from tqdm import tqdm
 import json
 
 NUM_DATAPOINTS_PER_GROUP = 1000
 MAX_NUM_TURNS = 4
-OUTPUT_FILE = "/h/laualli1/LLaMA-Factory/data/keertana_dpo_standard.json"
+OUTPUT_FILE = "/h/laualli1/LLaMA-Factory/data/keertana_dpo_standard_unshuffled.json"
 
-dataset = load_dataset("keertanavc/imdb_sentiment_grammar_dpo_multipreference")
+# compute canada #
+file_path = hf_hub_download(repo_id="keertanavc/imdb_sentiment_grammar_dpo_multipreference", filename="data.arrow")
+dataset = datasets.DatasetDict.load_from_disk(file_path)
+###
+
+# dataset = load_dataset("keertanavc/imdb_sentiment_grammar_dpo_multipreference")
 train_dataset = dataset['train']
 
 # import pdb; pdb.set_trace()
@@ -82,7 +89,7 @@ def create_datapoints(organized_data, num_datapoints_per_group, max_num_turns):
 # Generate the data
 # data = create_datapoints(organized_data, NUM_DATAPOINTS_PER_GROUP, MAX_NUM_TURNS)
 data = create_datapoints_standard(organized_data)
-random.shuffle(data)
+# random.shuffle(data)
 
 # Save to a JSON file
 try:

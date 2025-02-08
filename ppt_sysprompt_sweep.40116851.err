@@ -1,0 +1,9 @@
+
+Lmod is automatically replacing "gcc/12.3" with "intel/2023.2.1".
+
+
+Lmod is automatically replacing "gcc/12.3" with "intel/2023.2.1".
+
+wandb: Starting wandb agent 🕵️
+wandb: Network error (ConnectTimeout), entering retry loop.
+slurmstepd: error: *** JOB 40116851 ON ng30805 CANCELLED AT 2025-02-08T20:38:34 ***

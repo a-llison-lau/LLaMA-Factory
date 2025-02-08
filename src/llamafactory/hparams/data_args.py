@@ -123,6 +123,14 @@ class DataArguments:
             )
         },
     )
+    num_samples_per_epoch: int = field(
+        default=500,
+        metadata={"help": "Number of datapoints for each epoch"},
+    )
+    max_num_turns: int = field(
+        default=4,
+        metadata={"help": "Maximum number of turns in each datapoint"}
+    )
 
     def __post_init__(self):
         def split_arg(arg):

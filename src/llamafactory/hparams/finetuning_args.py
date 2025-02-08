@@ -131,7 +131,10 @@ class RLHFArguments:
     r"""
     Arguments pertaining to the PPO, DPO and KTO training.
     """
-
+    dynamic_sampling: bool = field(
+        default=False,
+        metadata={"help": "Whether dynamic sampling is enabled for finetuning"},
+    )
     pref_beta: float = field(
         default=0.1,
         metadata={"help": "The beta parameter in the preference loss."},

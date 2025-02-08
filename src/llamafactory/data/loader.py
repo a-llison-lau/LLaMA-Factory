@@ -26,6 +26,9 @@ from .aligner import align_dataset
 from .data_utils import merge_dataset, split_dataset
 from .parser import get_dataset_list
 from .preprocess import get_preprocess_and_print_func
+import random
+from tqdm import tqdm
+from datasets import Dataset
 
 
 if TYPE_CHECKING:
@@ -173,7 +176,7 @@ def _get_merged_dataset(
     return merge_dataset(datasets, data_args, seed=training_args.seed)
 
 
-def _get_preprocessed_dataset(
+def get_preprocessed_dataset(
     dataset: Optional[Union["Dataset", "IterableDataset"]],
     data_args: "DataArguments",
     training_args: "Seq2SeqTrainingArguments",
@@ -266,10 +269,10 @@ def get_dataset(
         eval_dataset = _get_merged_dataset(data_args.eval_dataset, model_args, data_args, training_args, stage)
 
     with training_args.main_process_first(desc="pre-process dataset"):
-        dataset = _get_preprocessed_dataset(
+        dataset = get_preprocessed_dataset(
             dataset, data_args, training_args, stage, template, tokenizer, processor, is_eval=False
         )
-        eval_dataset = _get_preprocessed_dataset(
+        eval_dataset = get_preprocessed_dataset(
             eval_dataset, data_args, training_args, stage, template, tokenizer, processor, is_eval=True
         )
 
@@ -307,9 +310,121 @@ def get_dataset(
             dataset_module["eval_dataset"] = dataset_dict["validation"]
 
         return dataset_module
+    
+
+def create_epoch_dataset(dataset, data_args):
+    """
+    Creates a dataset for one epoch by sampling and formatting conversations.
+    
+    Args:
+        dataset: Original dataset with '_prompt' and '_response' keys
+        data_args: DataArguments containing num_samples_per_epoch and max_num_turns
+    
+    Returns:
+        Dataset: A new dataset with num_samples_per_epoch samples, formatted with multiple turns
+    """
+    epoch_prompts = []
+    epoch_responses = []
+    epoch_system = []
+    epoch_tools = []
+    epoch_images = []
+    epoch_videos = []
+    
+    with tqdm(total=data_args.num_samples_per_epoch, desc="Creating Epoch Dataset") as pbar:
+        while len(epoch_prompts) < data_args.num_samples_per_epoch:
+            # Randomly select which group to sample from (0-19)
+            group_num = random.randint(0, 19)
+            start_idx = group_num * 1000
+            end_idx = (group_num + 1) * 1000
+            
+            num_turns = random.randint(1, data_args.max_num_turns)
+            
+            # Sample indices for the conversation turns
+            available_indices = list(range(start_idx, end_idx))
+            if len(available_indices) < num_turns + 1:  # +1 for the final turn
+                continue
+                
+            sampled_indices = random.sample(available_indices, num_turns + 1)
+            
+            conversation = []
+            
+            for idx in sampled_indices[:-1]:
+                conversation.extend(dataset['_prompt'][idx])
+                chosen_response = dataset['_response'][idx][0]['content']
+                rejected_response = dataset['_response'][idx][1]['content']
+                conversation.append({
+                    'content': f'<chosen> {chosen_response} <rejected> {rejected_response}',
+                    'role': 'assistant'
+                })
+            
+            final_idx = sampled_indices[-1]
+            conversation.extend(dataset['_prompt'][final_idx])
+            
+            epoch_prompts.append(conversation)
+            epoch_responses.append(dataset['_response'][final_idx])
+            epoch_system.append('')
+            epoch_tools.append('')
+            epoch_images.append(None)
+            epoch_videos.append(None)
+            
+            pbar.update(1)  # Update progress bar by 1
+    
+    epoch_dataset = Dataset.from_dict({
+        '_prompt': epoch_prompts,
+        '_response': epoch_responses,
+        '_system': epoch_system,
+        '_tools': epoch_tools,
+        '_images': epoch_images,
+        '_videos': epoch_videos
+    })
+    
+    return epoch_dataset
+    
+
+def get_dataset_pretokenized(
+    model_args: "ModelArguments",
+    data_args: "DataArguments",
+    training_args: "Seq2SeqTrainingArguments",
+    stage: Literal["pt", "sft", "rm", "ppo", "kto"]
+) -> "DatasetModule":
+    r"""
+    Gets the train dataset and optionally gets the evaluation dataset.
+    """
+    # Load tokenized dataset
+    if data_args.tokenized_path is not None:
+        if has_tokenized_data(data_args.tokenized_path):
+            logger.warning_rank0("Loading dataset from disk will ignore other data arguments.")
+            tokenized_data: Union["Dataset", "DatasetDict"] = load_from_disk(data_args.tokenized_path)
+            logger.info_rank0(f"Loaded tokenized dataset from {data_args.tokenized_path}.")
+
+            dataset_module: Dict[str, "Dataset"] = {}
+            if isinstance(tokenized_data, DatasetDict):
+                if "train" in tokenized_data:
+                    dataset_module["train_dataset"] = tokenized_data["train"]
+
+                if "validation" in tokenized_data:
+                    dataset_module["eval_dataset"] = tokenized_data["validation"]
+
+            else:  # Dataset
+                dataset_module["train_dataset"] = tokenized_data
+
+            if data_args.streaming:
+                dataset_module = {k: v.to_iterable_dataset() for k, v in dataset_module.items()}
+
+            return dataset_module
+
+        if data_args.streaming:
+            raise ValueError("Turn off `streaming` when saving dataset to disk.")
+
+    # Load and preprocess dataset
+    with training_args.main_process_first(desc="load dataset"):
+        dataset = _get_merged_dataset(data_args.dataset, model_args, data_args, training_args, stage)
+        eval_dataset = _get_merged_dataset(data_args.eval_dataset, model_args, data_args, training_args, stage)
+    
+    return dataset, eval_dataset
 
 
-def get_dataset_mod(
+def get_dataset_eval(
     template: "Template",
     model_args: "ModelArguments",
     data_args: "DataArguments",
@@ -355,7 +470,7 @@ def get_dataset_mod(
             )
 
         with training_args.main_process_first(desc="pre-process evaluation dataset"):
-            eval_dataset = _get_preprocessed_dataset(
+            eval_dataset = get_preprocessed_dataset(
                 eval_dataset, data_args, training_args, stage, template, tokenizer, processor, is_eval=True
             )
 
@@ -368,7 +483,7 @@ def get_dataset_mod(
                 )
 
             with training_args.main_process_first(desc="pre-process train dataset"):
-                train_dataset = _get_preprocessed_dataset(
+                train_dataset = get_preprocessed_dataset(
                     train_dataset, data_args, training_args, stage, template, tokenizer, processor, is_eval=False
                 )
 
@@ -381,7 +496,7 @@ def get_dataset_mod(
         dataset = _get_merged_dataset(data_args.dataset, model_args, data_args, training_args, stage)
 
     with training_args.main_process_first(desc="pre-process dataset"):
-        dataset = _get_preprocessed_dataset(
+        dataset = get_preprocessed_dataset(
             dataset, data_args, training_args, stage, template, tokenizer, processor, is_eval=False
         )
 

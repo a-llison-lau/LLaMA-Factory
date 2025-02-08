@@ -213,7 +213,7 @@ def compute_rm(
         data_args.train_dataset = None
         data_args.eval_dataset = [turn_eval_dataset]
 
-        dataset_module = get_dataset_mod(template, model_args, data_args, training_args, stage="rm", **tokenizer_module)    # safe
+        dataset_module = get_dataset_eval(template, model_args, data_args, training_args, stage="rm", **tokenizer_module)    # safe
         eval_dataset = dataset_module.get("eval_dataset")
 
         # Initialize the data collator

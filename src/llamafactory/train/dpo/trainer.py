@@ -16,28 +16,43 @@
 # limitations under the License.
 
 import warnings
-from collections import defaultdict
 from contextlib import nullcontext
 from types import MethodType
-from typing import TYPE_CHECKING, Dict, List, Literal, Optional, Tuple, Union
+from typing import TYPE_CHECKING, Dict, List, Literal, Optional, Tuple, Union, Any
+from collections import defaultdict
+import sys
 
 import torch
 import torch.nn.functional as F
-from transformers import Trainer
+from torch.utils.data import DataLoader, Dataset
+from transformers import (
+    PreTrainedModel,
+    PreTrainedTokenizer,
+    Trainer,
+    TrainerCallback,
+    DataCollator,
+    ProcessorMixin
+)
+from transformers.trainer_pt_utils import nested_detach
 from trl import DPOTrainer
 from trl.trainer import disable_dropout_in_model
 from typing_extensions import override
+from datasets import DatasetDict
 
 from ...extras.constants import IGNORE_INDEX
 from ...extras.packages import is_transformers_version_equal_to_4_46, is_transformers_version_greater_than
 from ..callbacks import SaveProcessorCallback
 from ..trainer_utils import create_custom_optimizer, create_custom_scheduler, get_batch_logps, nested_detach
+from ...data import create_epoch_dataset, get_preprocessed_dataset
+from ...data.data_utils import split_dataset
 
 
 if TYPE_CHECKING:
     from transformers import PreTrainedModel, ProcessorMixin
+    from ...data.template import Template
+    import optuna
 
-    from ...hparams import FinetuningArguments
+    from ...hparams import FinetuningArguments, DataArguments, TrainingArguments
 
 
 class CustomDPOTrainer(DPOTrainer):
@@ -317,3 +332,106 @@ class CustomDPOTrainer(DPOTrainer):
                 logs[key] = metric
 
         return Trainer.log(self, logs)
+
+
+class DynamicSamplingDPOTrainer(CustomDPOTrainer):
+    def __init__(
+        self,
+        model: Union["PreTrainedModel", torch.nn.Module],
+        ref_model: Optional[Union["PreTrainedModel", torch.nn.Module]],
+        training_args: "TrainingArguments",
+        finetuning_args: "FinetuningArguments",
+        data_args: "DataArguments",
+        data_collator: Optional[DataCollator] = None,
+        raw_dataset: Optional[Dataset] = None,
+        raw_eval_dataset: Optional[Dataset] = None,
+        template: Optional["Template"] = None,
+        tokenizer: Optional["PreTrainedTokenizer"] = None,
+        callbacks: Optional[List[TrainerCallback]] = None,
+        processor: Optional["ProcessorMixin"] = None,
+        **kwargs,
+    ):
+        self.raw_dataset = raw_dataset
+        self.raw_eval_dataset = raw_eval_dataset
+        self.template = template
+        self.tokenizer = tokenizer
+        self.finetuning_args = finetuning_args
+        self.training_args = training_args
+        self.data_args = data_args
+        self.current_epoch = 0
+        
+        super().__init__(
+            model=model,
+            ref_model=ref_model,
+            finetuning_args=finetuning_args,
+            processor=processor,
+            data_collator=data_collator,
+            callbacks=callbacks,
+            **kwargs
+        )
+
+    def _get_train_dataloader(self) -> DataLoader:
+        """
+        Returns a new DataLoader every epoch with freshly sampled data.
+        """
+        print(f"!!!!The current epoch is {self.current_epoch}!!!")
+        if self.raw_dataset is not None:
+            epoch_dataset = create_epoch_dataset(self.raw_dataset, self.data_args)
+            
+            self.train_dataset = get_preprocessed_dataset(
+                epoch_dataset,
+                self.data_args,
+                self.training_args,
+                "rm",
+                self.template,
+                self.tokenizer,
+                None,
+                is_eval=False
+            )
+        if self.raw_eval_dataset is not None:
+            self.eval_dataset = get_preprocessed_dataset(
+                    self.raw_eval_dataset,
+                    self.data_args,
+                    self.training_args,
+                    "rm",
+                    self.template,
+                    self.tokenizer,
+                    None,
+                    is_eval=True
+                )
+        
+        return super()._get_train_dataloader()
+
+    def train(
+        self,
+        resume_from_checkpoint: Optional[Union[str, bool]] = None,
+        trial: Union["optuna.Trial", Dict[str, Any]] = None,
+        ignore_keys_for_eval: Optional[List[str]] = None,
+        **kwargs,
+    ):
+        # Reset epoch counter when starting training
+        self.current_epoch = 0
+        return super().train(
+            resume_from_checkpoint=resume_from_checkpoint,
+            trial=trial,
+            ignore_keys_for_eval=ignore_keys_for_eval,
+            **kwargs,
+        )
+
+    def _maybe_log_save_evaluate(
+        self,
+        tr_loss,
+        model,
+        trial,
+        epoch,
+        ignore_keys_for_eval,
+    ):
+        # Update current epoch before calling parent method
+        self.current_epoch = epoch
+        return super()._maybe_log_save_evaluate(
+            tr_loss,
+            model,
+            trial,
+            epoch,
+            ignore_keys_for_eval,
+        )

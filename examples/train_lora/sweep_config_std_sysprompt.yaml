@@ -1,5 +1,6 @@
 # srun --mem=48GB -c 4 --gres=gpu:1 --time=1-00:00:00 --qos=long -p a40 -n 1 --pty bash
 # srun --mem=48GB -c 4 --gres=gpu:1 --account=deadline --qos=deadline -p a40 -n 1 --pty --time=1-00:00:00 bash
+# check: dataset, model name, save directory, dynamic_sampling, run name
 program: llamafactory-cli
 method: random
 metric:
@@ -14,8 +15,7 @@ command:
   - ${program}
   - train
   - "--model_name_or_path"
-  - "/model-weights/Qwen2.5-1.5B-Instruct"
-  # - examples/train_lora/llama3_lora_dpo.yaml
+  - "/home/laualli1/projects/def-rahulgk/laualli1/model-weights/Qwen2.5-1.5B-Instruct"
   - "--stage"
   - "dpo"
   - "--do_train"
@@ -29,8 +29,9 @@ command:
   - "--pref_loss"
   - "sigmoid"
   - "--dataset"
-  - "keertana_dpo_1000_sysprompt"
-  # - "keertana_dpo_standard"
+  - "keertana_dpo_standard_sysprompt"
+  - "--dynamic_sampling"
+  - "false"
   - "--template"
   - "qwen"
   - "--cutoff_len"
@@ -70,7 +71,7 @@ command:
   - "--eval_steps"
   - "500"
   - "--output_dir"
-  - "/scratch/ssd004/scratch/laualli1/qwen1.5B_instruct_ppt_keertana_1000_cutofflen2048_sysprompt_sweep/"
+  - "/home/laualli1/scratch/qwen2.5_1.5B_instruct_standarddpo_keertana_sentiment_grammar_sysprompt_sweep/"
   - "--run_name"
-  - "run_0130"
+  - "qwen2.5_1.5B_instruct_standarddpo_keertana_sentiment_grammar_sysprompt_sweep"
   - ${args}

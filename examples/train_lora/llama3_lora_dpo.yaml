@@ -1,5 +1,5 @@
 ### model
-model_name_or_path: /model-weights/Qwen2.5-1.5B-Instruct
+model_name_or_path: /home/laualli1/projects/def-rahulgk/laualli1/model-weights/Qwen2.5-1.5B-Instruct
 
 ### method
 stage: dpo
@@ -8,18 +8,21 @@ finetuning_type: lora
 lora_target: all
 pref_beta: 0.2
 pref_loss: sigmoid  # [sigmoid (dpo), orpo, simpo]
+dynamic_sampling: true
 
 ### dataset
-dataset: keertana_dpo_standard
+dataset: keertana_dpo_standard_unshuffled
 template: qwen
 cutoff_len: 2048
 overwrite_cache: true
 preprocessing_num_workers: 16
+num_samples_per_epoch: 20
+max_num_turns: 4
 
 ### output
 report_to: wandb
-run_name: run_0129
-output_dir: /scratch/ssd004/scratch/laualli1/test0129_qwen1.5B_instruct_ppt_keertana_1000_sysprompt_cutofflen2048_adapter
+run_name: qwen2.5_1.5B_instruct_dynasam_ppt_keertana_sentiment_grammar_sysprompt_sweep
+output_dir: /home/laualli1/scratch/qwen2.5_1.5B_instruct_dynasam_ppt_keertana_sentiment_grammar_sysprompt_sweep/
 logging_steps: 10
 save_steps: 500
 plot_loss: true

@@ -453,6 +453,26 @@
       "rejected": "rejected"
     }
   },
+  "keertana_dpo_standard_sysprompt": {
+    "file_name": "keertana_dpo_standard_sysprompt.json",
+    "ranking": true,
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
+  "keertana_dpo_standard_unshuffled": {
+    "file_name": "keertana_dpo_standard_unshuffled.json",
+    "ranking": true,
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "chosen": "chosen",
+      "rejected": "rejected"
+    }
+  },
   "keertana_dpo_label_0_turn_1": {
     "file_name": "keertana_dpo_label_0_turn_1.json",
     "ranking": true,
